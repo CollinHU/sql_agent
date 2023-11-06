@@ -40,7 +40,7 @@ class RemoteChatAgent_Agents implements INode {
         ]
     }
 
-    async init (nodeData: INodeData, _: string, options: ICommonObject): Promise<any> {
+    async init(nodeData: INodeData, _: string, options: ICommonObject): Promise<any> {
         console.log('################## arrive in remote chat ! ' + options.chatflowid)
         return await axios
             .post('http://localhost:3300/xxx', {
@@ -55,7 +55,7 @@ class RemoteChatAgent_Agents implements INode {
             })
     }
 
-    async run (nodeData: INodeData, input: string, options: ICommonObject): Promise<string> {
+    async run(nodeData: INodeData, input: string, options: ICommonObject): Promise<string> {
         const remoteChatAgentUrl = nodeData.inputs?.remoteEndPoint + '/api/v1/sendChatMsg'
         console.log('---------- ' + this.sessionId)
         const runRequest = {
