@@ -29,7 +29,8 @@ Otherwise, I can then look at the tables in the database to see what I can query
 Then I should query the schema of the most relevant tables.
 """
 import openai
-openai.api_base = "https://api.chatanywhere.com.cn/v1"
+openai.api_base = "https://api.duckgpt.top/v1"
+#"https://api.chatanywhere.com.cn/v1"
 
 #prepare vector store
 from langchain.embeddings.openai import OpenAIEmbeddings
