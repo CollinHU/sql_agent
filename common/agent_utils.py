@@ -1,18 +1,19 @@
 base_suffix = """
-When giving the final answer, also append the final SQL and explain it. 
-each sentence should take a new line.
-For example,
-```sql 
-SELECT COUNT(*) from employee WHERE employee.name = xxx, 
-```
-this query find the number of employee whose name is xxx.\n
-
 You must use reponses from database to answer questions.
 if the answers contains multiple items, list them line by line. 
 For example, the final answer is [apple, orange, banana], list thema as follow:
 -apple
 -orange
--banana"""
+-banana
+
+When giving the final answer, also append the final SQL and explain it. 
+For example,
+There are n employee whose name is xxx
+```sql 
+SELECT COUNT(*) from employee WHERE employee.name = xxx, 
+```
+this query find the number of employee whose name is xxx.\n
+"""
 
 custom_suffix_sim = """
 I should first get the similar examples I know.
@@ -29,8 +30,8 @@ Otherwise, I can then look at the tables in the database to see what I can query
 Then I should query the schema of the most relevant tables.
 """
 import openai
-openai.api_base = "https://api.duckgpt.top/v1"
-#"https://api.chatanywhere.com.cn/v1"
+#openai.api_base = "https://api.duckgpt.top/v1"
+openai.api_base ="https://api.chatanywhere.com.cn/v1"
 
 #prepare vector store
 from langchain.embeddings.openai import OpenAIEmbeddings

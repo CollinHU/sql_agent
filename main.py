@@ -2,8 +2,8 @@ import uvicorn
 from fastapi import FastAPI
 
 import openai
-openai.api_base = "https://api.duckgpt.top/v1"
-#"https://api.chatanywhere.com.cn/v1"
+#openai.api_base = "https://api.duckgpt.top/v1"
+openai.api_base = "https://api.chatanywhere.com.cn/v1"
 
 from langchain.agents import create_sql_agent
 from langchain.agents.agent_toolkits import SQLDatabaseToolkit
